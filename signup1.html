@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>CCS || ISTE-VIT</title>
+    <link rel="icon" type="image/png" href="D:\IWP\img\icon\Iste-icon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto"
+      rel="stylesheet"
+    />
+
+    <!-- Stylesheet for Custon CSS -->
+    <!-- <link rel="stylesheet" href="D:\IWP\css\style.css" /> -->
+    <script src="script.js"></script>
+    <script type="text/javascript">
+      window.onload = function(){ 
+                      alert("Registrations Open Only for 2022 Batch");
+                      }
+      </script>
+<!-- validate by ajax -->
+<!-- <script>
+        var signupform = document.getElementById("signup-form");
+        var checkForm = function(e) {
+        var form = e.target;
+// validate name
+    if(this.name.value == "") {
+      alert("Please enter your Name in the form");
+      this.name.focus();
+      e.preventDefault();
+      return;
+    }
+
+    if(this.registrationNumber.value == "") {
+      alert("Please enter your RegNo in the form");
+      this.registrationNumber.focus();
+      e.preventDefault();
+      return;
+    }
+    alert("Success! ");
+    e.preventDefault();
+
+  }
+
+</script> -->
+
+  </head>
+
+  <body style="background-color: black;border-bottom: 6px solid #40c0ff;">
+    
+
+    <header id="header"></header>
+    <div id="signup"
+      class="container col-11 col-lg-7 col-md-10 col-sm-10 p-4 pt-5 pb-5 mt-5 shadow-lg"
+      style="padding-left: 80px;">
+      <h4 style="padding-left: 170px;color: white;"><b>SIGN UP</b></h4>
+      <br />
+
+      <form id="signup-form" style="padding-left: 150px;" onsubmit="return validateForm()"action="register.php" method="post">
+        <div class="form-row">
+          <div class="form-column pl-3 pr-3 pb-2 col-md-7">
+            <div class="form-group col-md-10">
+              <input
+                type="text"
+                class="form-control"
+                id="name"
+                name="name"
+                placeholder="Name"/>
+              
+              
+              <img id="icon" src="D:\IWP\img\icon\person-fill.png" />
+            </div>
+            <div class="form-group col-md-10">
+              <input
+                type="text"
+                class="form-control"
+                id="registrationNumber"
+                name="registrationNumber"
+                placeholder="Registration Number"/>
+              
+              
+              <img
+                id="icon"
+                src="D:\IWP\img\icon\numeric.png"
+                style="padding-top: 13px; padding-left: 10px;"
+              />
+            </div>
+            <div class="form-group col-md-10">
+              <input
+                type="email"
+                class="form-control"
+                id="email"
+                name="email"
+                placeholder="Gmail"/>
+              
+              
+
+              <img id="icon" src="D:\IWP\img\icon\email_round.png" />
+            </div>
+            <div class="form-group col-md-10">
+              <input
+                type="text"
+                class="form-control"
+                id="mobile"
+                name="mobile"
+                placeholder="Mobile Number (10 digits)"/>
+               
+              
+              <img
+                id="icon"
+                src="D:\IWP\img\icon\mobile.png"
+                style="padding-left: 14px;"
+              />
+            </div>
+
+            <div class="form-group col-md-10">
+              <input
+                type="password"
+                class="form-control"
+                id="password"
+                name="password"
+                placeholder="Password"/>
+                
+              
+              <img id="icon" src="D:\IWP\img\icon\asterisk.png" />
+            </div>
+          </div>
+
+          <div class="form-group col-md-10" style="color:white ;">
+            <input type="radio" id="Gender" name="Gender_Specify" value="Male" >
+               <label for="Gender">Male</label>
+              <input type="radio" id="female" name="Gender_Specify" value="Female">
+                <label for="female">Female</label>
+              <input type="radio" id="noSpecify" name="Gender_Specify" value="Prefer Not to Say">
+                <label for="noSpecify">Prefer Not to Say</label>
+          </div>
+
+          <div class="form-group col-md-10">
+            <h5 for="branch" style="color:white;">Campus :</h5>
+            <select id="branch" name="Branch_name">
+                <optgroup label="Tamil Nadu">
+                  <option value="vellore">VIT Vellore</option>
+                  <option value="chennai">VIT Chennai</option>
+                </optgroup>
+                <optgroup label="Andhra Pradesh">
+                  <option value="amravati">VIT Amravati</option>
+                </optgroup>
+                <optgroup label="Madhya Pradesh">
+                  <option value="bhopal">VIT Bhopal</option>
+                </optgroup>
+              </select>
+        </div>
+
+        <div class="form-group col-md-10">
+          <h5 for="dt" style="color:white;">Select Interview Date & Time :</h5>
+          <br>
+          <input type="date" id="dt" name="date" required> 
+          <input type="time" id="dt" name="time" required>
+      </div>
+    <div class="form-group col-md-10">
+      <h5 for="myfile" style="color:white;">Upload Resume :</h5>
+      <input type="file" id="myfile" name="myfile">
+    </div>
+    
+    <div style="color:white; ">
+      <!-- form-column pl-4 pr-3 col-md-5 -->
+          <div class="form-group col-md-10 ">
+            <h5>Tick your preferred domain(s):</h5>
+            <br />
+            <div class="form-check">
+              <input
+                type="checkbox"
+                class="form-check-input"
+                id="TechnicalCSE"
+              />
+              <label class="form-check-label" for="TechnicalCSE">
+                Technical(CSE)
+              </label>
+            </div>
+            <div class="form-check">
+              <input
+                type="checkbox"
+                class="form-check-input"
+                id="TechnicalElectrical"
+              />
+              <label class="form-check-label" for="TechnicalElectrical">
+                Technical(Electrical)
+              </label>
+            </div>
+            <div class="form-check">
+              <input type="checkbox" class="form-check-input" id="Management" />
+              <label class="form-check-label" for="Management">
+                Management
+              </label>
+            </div>
+            <div class="form-check">
+              <input type="checkbox" class="form-check-input" id="Design" />
+              <label class="form-check-label" for="Design">Design</label>
+            </div>
+            <span>
+              <span class="text-danger">
+                *Select at least one preferred domain(s) before signing up.
+              </span>
+              <br />
+              You can choose more than one domain.
+            </span>
+
+            <div class="text-center pt-3 mr-3">
+              <button
+                type="submit"
+                class="btn btn-primary"
+                style="background-color: #39ade6; border-color: #39ade6;">
+                Sign Up 
+              </button>
+            </div>
+          </div>
+        </div>
+      </form>
+
+    </div>
+
+      
+     
+  </body>
+</html>
